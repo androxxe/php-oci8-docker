@@ -31,4 +31,6 @@ RUN INSTANT_CLIENT_DIR=$(ls -d /opt/oracle/instantclient_* | head -1) && \
 
 ENV LD_LIBRARY_PATH=/opt/oracle/instantclient_23_7
 
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
 WORKDIR /app
