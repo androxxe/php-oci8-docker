@@ -82,6 +82,10 @@ composer82 require vendor/package
 docker compose run --rm php82 php -m | grep oci8
 ```
 
+## Author
+
+Andrio Pratama Sirait
+
 ## License
 
 MIT
