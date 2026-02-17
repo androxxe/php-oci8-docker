@@ -1,0 +1,48 @@
+services:
+  php74:
+    build:
+      context: .
+      args:
+        PHP_VERSION: "7.4"
+    image: php-oci8:7.4
+    stdin_open: true
+    tty: true
+    working_dir: /app
+    volumes:
+      - .:/app
+
+  php80:
+    build:
+      context: .
+      args:
+        PHP_VERSION: "8.0"
+    image: php-oci8:8.0
+    stdin_open: true
+    tty: true
+    working_dir: /app
+    volumes:
+      - .:/app
+
+  php81:
+    build:
+      context: .
+      args:
+        PHP_VERSION: "8.1"
+    image: php-oci8:8.1
+    stdin_open: true
+    tty: true
+    working_dir: /app
+    volumes:
+      - .:/app
+
+  php82:
+    build:
+      context: .
+      args:
+        PHP_VERSION: "8.2"
+    image: php-oci8:8.2
+    stdin_open: true
+    tty: true
+    working_dir: /app
+    volumes:
+      - .:/app
