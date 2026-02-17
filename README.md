@@ -14,7 +14,24 @@ PHP Docker containers with Oracle Instant Client and OCI8 extension for Oracle D
 - Oracle Instant Client 23.7
 - OCI8 extension pre-installed
 - Composer included
+- Git included
 - Multi-architecture support (arm64/x64)
+
+## Included PHP Extensions
+
+| Extension | Description |
+|-----------|-------------|
+| oci8 | Oracle Database connectivity |
+| pdo | PHP Data Objects |
+| pdo_mysql | MySQL driver for PDO |
+| pdo_pgsql | PostgreSQL driver for PDO |
+| pdo_sqlite | SQLite driver for PDO |
+| mbstring | Multibyte string handling |
+| zip | Archive handling |
+| gd | Image processing |
+| bcmath | Arbitrary precision mathematics |
+| intl | Internationalization |
+| opcache | Opcode caching for performance |
 
 ## Quick Start
 

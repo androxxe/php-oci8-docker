@@ -6,6 +6,14 @@ RUN apt-get update && apt-get install -y \
     libnsl2 \
     unzip \
     curl \
+    git \
+    libpng-dev \
+    libjpeg-dev \
+    libfreetype6-dev \
+    libzip-dev \
+    libicu-dev \
+    libpq-dev \
+    libonig-dev \
     && rm -rf /var/lib/apt/lists/* \
     && ([ -f /usr/lib/$(uname -m)-linux-gnu/libaio.so.1t64 ] && ln -sf /usr/lib/$(uname -m)-linux-gnu/libaio.so.1t64 /usr/lib/$(uname -m)-linux-gnu/libaio.so.1 || true)
 
@@ -24,6 +32,9 @@ RUN ARCH=$(dpkg --print-architecture) && \
     INSTANT_CLIENT_DIR=$(ls -d /opt/oracle/instantclient_* | head -1) && \
     echo $INSTANT_CLIENT_DIR > /etc/ld.so.conf.d/oracle-instantclient.conf && \
     ldconfig
+
+RUN docker-php-ext-configure gd --with-freetype --with-jpeg && \
+    docker-php-ext-install pdo pdo_mysql pdo_pgsql mbstring zip gd bcmath intl opcache
 
 RUN INSTANT_CLIENT_DIR=$(ls -d /opt/oracle/instantclient_* | head -1) && \
     docker-php-ext-configure oci8 --with-oci8=instantclient,$INSTANT_CLIENT_DIR && \
